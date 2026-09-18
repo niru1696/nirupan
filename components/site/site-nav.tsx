@@ -45,7 +45,7 @@ export function SiteNav() {
               width={150}
               height={28}
               priority
-              className="h-5 w-auto md:h-6"
+              className="h-8 w-auto md:h-6"
             />
           </Link>
 
