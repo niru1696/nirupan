@@ -18,7 +18,7 @@ export async function SiteFooter() {
       <div className="mx-auto max-w-[1600px]">
         <div className="flex flex-col gap-12 md:flex-row md:items-end md:justify-between">
           <div>
-            <Image src="/brand/nirupan-white.png" alt="Nirupan" width={220} height={40} className="h-7 w-auto" />
+            <Image src="/brand/nirupan-white.png" alt="Nirupan" width={220} height={40} className="h-10 w-auto" />
             <p className="mt-5 max-w-xs text-sm leading-relaxed text-muted-foreground">
               Composer, music producer & programmer. Scoring films, commercials and brand campaigns.
             </p>
