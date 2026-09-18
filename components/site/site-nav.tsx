@@ -37,7 +37,7 @@ export function SiteNav() {
           scrolled ? "bg-background/80 backdrop-blur-md border-b border-border" : "bg-transparent"
         }`}
       >
-        <nav className="mx-auto flex h-32 max-w-[1600px] items-center justify-between px-5 pt-4 sm:px-8 md:h-36 md:pt-5">
+        <nav className="mx-auto flex h-36 max-w-[1600px] items-center justify-between px-5 pt-5 sm:px-8 md:h-40 md:pt-6">
           <Link href="/" className="relative z-10 flex items-center" aria-label="Nirupan — home">
             <Image
   src="/brand/nirupan-white.png"
@@ -45,7 +45,7 @@ export function SiteNav() {
   width={330}
   height={165}
   priority
-  className="h-auto w-[240px] md:w-[260px]"
+  className="h-auto w-[360px] md:w-[390px]"
 />
           </Link>
 
