@@ -40,13 +40,13 @@ export function SiteNav() {
         <nav className="mx-auto flex h-16 max-w-[1600px] items-center justify-between px-5 sm:px-8 md:h-20">
           <Link href="/" className="relative z-10 flex items-center" aria-label="Nirupan — home">
             <Image
-                src="/brand/nirupan-white.png"
+  src="/brand/nirupan-white.png"
   alt="Nirupan"
-  width={660}
-  height={330}
+  width={450}
+  height={225}
   priority
-  className="h-auto w-[540px] md:w-[660px]"
-            />
+  className="h-auto w-[360px] md:w-[450px]"
+/>
           </Link>
 
           <ul className="hidden items-center gap-9 md:flex">
