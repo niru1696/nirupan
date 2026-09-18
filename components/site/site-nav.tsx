@@ -42,10 +42,10 @@ export function SiteNav() {
             <Image
               src="/brand/nirupan-white.png"
               alt="Nirupan"
-              width={150}
-              height={28}
+              width={220}
+              height={110}
               priority
-              className="h-10 w-auto md:h-10"
+              className="h-auto w-[180px] md:w-[220px]"
             />
           </Link>
 
