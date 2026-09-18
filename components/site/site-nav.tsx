@@ -41,10 +41,10 @@ export function SiteNav() {
           <Link href="/" className="relative z-10 flex items-center" aria-label="Nirupan — home">
             <Image src="/brand/nirupan-white.png"
   alt="Nirupan"
-  width={450}
-  height={225}
+  width={220}
+  height={110}
   priority
-  className="h-auto w-[360px] md:w-[450px]"
+  className="h-auto w-[180px] md:w-[220px]"
 />
           </Link>
 
