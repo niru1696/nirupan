@@ -21,9 +21,9 @@ export async function SiteFooter() {
             <Image
   src="/brand/nirupan-white.png"
   alt="Nirupan"
-  width={585}
-  height={293}
-  className="h-auto w-[450px] md:w-[585px] max-w-none"
+  width={440}
+  height={220}
+  className="h-auto w-[330px] md:w-[440px] max-w-none"
 />
             <p className="mt-5 max-w-xs text-sm leading-relaxed text-muted-foreground">
               Composer, music producer & programmer. Scoring films, commercials and brand campaigns.
