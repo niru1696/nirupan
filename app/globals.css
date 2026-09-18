@@ -1,0 +1,183 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* ------------------------------------------------------------------ */
+/*  NIRUPAN — cinematic near-black editorial system                    */
+/* ------------------------------------------------------------------ */
+
+:root {
+  /* Core cinematic palette */
+  --background: #080808;
+  --background-elevated: #0b0b0b;
+  --foreground: #f2ece1; /* warm ivory */
+  --muted-foreground: #8c877e; /* muted warm grey */
+  --accent: #c9a86a; /* subtle champagne / warm gold */
+  --accent-muted: #6b5d40;
+  --border: #1c1c1a;
+  --border-strong: #2a2a27;
+
+  /* shadcn tokens (used by admin UI) */
+  --card: #0d0d0c;
+  --card-foreground: #f2ece1;
+  --popover: #0d0d0c;
+  --popover-foreground: #f2ece1;
+  --primary: #f2ece1;
+  --primary-foreground: #080808;
+  --secondary: #16150f;
+  --secondary-foreground: #f2ece1;
+  --muted: #141412;
+  --accent-foreground: #080808;
+  --destructive: #b4462f;
+  --destructive-foreground: #f2ece1;
+  --input: #1c1c1a;
+  --ring: #c9a86a;
+  --radius: 0.25rem;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-background-elevated: var(--background-elevated);
+  --color-foreground: var(--foreground);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-muted: var(--accent-muted);
+  --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
+
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --font-display: var(--font-bebas), "Arial Narrow", sans-serif;
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+
+  --radius-sm: calc(var(--radius) - 2px);
+  --radius-md: var(--radius);
+  --radius-lg: calc(var(--radius) + 2px);
+}
+
+@layer base {
+  * {
+    border-color: var(--border);
+  }
+  html {
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-sans);
+    font-feature-settings: "ss01", "cv01";
+    overflow-x: hidden;
+  }
+  ::selection {
+    background: var(--accent);
+    color: #080808;
+  }
+}
+
+/* Display type — condensed cinematic headline face */
+.font-display {
+  font-family: var(--font-display);
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  line-height: 0.86;
+}
+
+/* Fluid display sizing helpers */
+.text-hero {
+  font-size: clamp(3.5rem, 16vw, 18rem);
+}
+.text-section {
+  font-size: clamp(2.75rem, 9vw, 9rem);
+}
+.text-mega {
+  font-size: clamp(5rem, 22vw, 24rem);
+}
+
+/* Kicker / metadata label */
+.kicker {
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--muted-foreground);
+  font-weight: 500;
+}
+
+/* Film grain overlay */
+.grain::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  pointer-events: none;
+  opacity: 0.05;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* Vignette */
+.vignette::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  background: radial-gradient(ellipse at center, transparent 40%, rgba(0, 0, 0, 0.55) 100%);
+}
+
+/* Hide native cursor when custom cursor is active (desktop only) */
+@media (hover: hover) and (pointer: fine) {
+  .custom-cursor-active,
+  .custom-cursor-active * {
+    cursor: none !important;
+  }
+}
+
+/* Thin marquee/scrolling utilities */
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+.animate-marquee {
+  animation: marquee 40s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee {
+    animation: none;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #080808;
+}
+::-webkit-scrollbar-thumb {
+  background: #2a2a27;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-muted);
+}
